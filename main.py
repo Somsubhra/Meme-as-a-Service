@@ -9,10 +9,10 @@ class IndexHandler(webapp2.RequestHandler):
 
 # The API handler class
 class ApiHandler(webapp2.RequestHandler):
-    def get(self):
-        pass
+    def get(self, img, caption, creator):
+        self.response.write(img + ";" + caption + ";" + creator)
 
 app = webapp2.WSGIApplication([
     ('/', IndexHandler),
-
+    ('/(.*)/(.*)/(.*)', ApiHandler)
 ], debug=True)
