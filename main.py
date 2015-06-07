@@ -28,8 +28,8 @@ class IndexHandler(webapp2.RequestHandler):
 class ApiHandler(webapp2.RequestHandler):
 
     # Handle GET requests for the API
-    def get(self, img, bottom_caption=None, top_caption=None):
-        result = MAASApi.handler(JINJA_ENVIRONMENT, img, bottom_caption, top_caption)
+    def get(self, img, top_caption=None, bottom_caption=None):
+        result = MAASApi.handler(JINJA_ENVIRONMENT, img, top_caption, bottom_caption)
         self.response.write(result)
 
 # Initialize the application

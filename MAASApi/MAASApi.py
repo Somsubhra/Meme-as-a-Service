@@ -7,7 +7,7 @@ class MAASApi:
 
     # Handler for the API
     @staticmethod
-    def handler(jinja_env, img, bottom_caption=None, top_caption=None):
+    def handler(jinja_env, img, top_caption=None, bottom_caption=None):
         template_varibles = {
             "bottom_caption": bottom_caption,
             "top_caption": top_caption,
