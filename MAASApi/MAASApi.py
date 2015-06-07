@@ -1,3 +1,6 @@
+# All imports
+import urllib
+
 # The image dictionary
 IMAGE_DICT = {
     "obama": "/static/img/obama.jpg"
@@ -17,7 +20,7 @@ class MAASApi:
         if img in IMAGE_DICT:
             return IMAGE_DICT[img]
         else:
-            return img
+            return urllib.unquote(img).decode('utf8')
 
     # Handler for the API
     @staticmethod
