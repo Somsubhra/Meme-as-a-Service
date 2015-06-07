@@ -29,7 +29,8 @@ class ApiHandler(webapp2.RequestHandler):
 
     # Handle GET requests for the API
     def get(self, img, bottom_caption=None, top_caption=None):
-        MAASApi.handler(self.response, img, bottom_caption, top_caption)
+        result = MAASApi.handler(JINJA_ENVIRONMENT, img, bottom_caption, top_caption)
+        self.response.write(result)
 
 # Initialize the application
 app = webapp2.WSGIApplication([
