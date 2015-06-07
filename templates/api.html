@@ -11,11 +11,15 @@
 </head>
 <body>
 <div class="top-caption">
-    {{ top_caption }}
+    {% if top_caption %}
+        {{ top_caption }}
+    {% endif %}
 </div>
 <img src="{{ img_url }}" class="meme-img">
 <div class="bottom-caption">
-    {{ bottom_caption }}
+    {% if bottom_caption %}
+        {{ bottom_caption }}
+    {% endif %}
 </div>
 </body>
 </html>
