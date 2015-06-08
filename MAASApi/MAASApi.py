@@ -30,7 +30,7 @@ class MAASApi:
             "bottom_caption": bottom_caption,
             "top_caption": top_caption,
             "img_url": MAASApi.image_url(img),
-            "meme_url": request.url
+            "meme_url_encoded": urllib.quote(request.url, safe='')
         }
 
         template = jinja_env.get_template("api.html")
