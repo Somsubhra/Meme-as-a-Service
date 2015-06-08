@@ -3,7 +3,11 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>
-        Meme as a Service
+        {% if top_caption %}
+            {{ top_caption }}
+        {% else %}
+            Meme as a Service
+        {% endif %}
     </title>
     <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/static/css/common.css" type="text/css">
