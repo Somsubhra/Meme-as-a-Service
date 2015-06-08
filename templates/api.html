@@ -27,9 +27,13 @@
 </div>
 
 <div class="btn-bar">
-    <a href="/" class="share-btn red">Create your own meme!</a>
-    <a href="#" class="share-btn green">Share on Twitter</a>
-    <a href="#" class="share-btn blue">Share on Facebook</a>
+    <a href="/" class="share-btn red" target="_blank">Create your own meme!</a>
+    <a href="https://twitter.com/intent/tweet?text={{ meme_url }}" class="share-btn green" target="_blank">
+        Share on Twitter
+    </a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u={{ meme_url }}" class="share-btn blue" target="_blank">
+        Share on Facebook
+    </a>
 </div>
 </body>
 </html>

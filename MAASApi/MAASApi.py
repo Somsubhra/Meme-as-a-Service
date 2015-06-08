@@ -24,12 +24,13 @@ class MAASApi:
 
     # Handler for the API
     @staticmethod
-    def handler(jinja_env, img, top_caption=None, bottom_caption=None):
+    def handler(request, response, jinja_env, img, top_caption=None, bottom_caption=None):
         template_varibles = {
             "bottom_caption": bottom_caption,
             "top_caption": top_caption,
-            "img_url": MAASApi.image_url(img)
+            "img_url": MAASApi.image_url(img),
+            "meme_url": request.url
         }
 
         template = jinja_env.get_template("api.html")
-        return template.render(template_varibles)
+        response.write(template.render(template_varibles))
