@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <title>
         {% if top_caption %}
-            {{ top_caption }}
+            {% if bottom_caption %}
+                {{ top_caption }} {{ bottom_caption }}
+            {% else %}
+                {{ top_caption }}
+            {% endif %}
         {% else %}
             Meme as a Service
         {% endif %}
